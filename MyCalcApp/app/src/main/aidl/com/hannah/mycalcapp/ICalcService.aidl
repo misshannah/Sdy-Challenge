@@ -9,6 +9,4 @@ interface ICalcService {
         int Subtract(int a, int b);
         int Multiply(int a, int b);
 
-    void basicTypes(int anInt, long aLong, boolean aBoolean, float aFloat,
-            double aDouble, String aString);
 }
