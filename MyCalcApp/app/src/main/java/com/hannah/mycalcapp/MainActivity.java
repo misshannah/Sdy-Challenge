@@ -35,14 +35,17 @@ public class MainActivity extends AppCompatActivity implements ServiceConnection
         value2_txt = findViewById(R.id.value2);
         result_txt = findViewById(R.id.result);
 
+
+
         add_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 if(!value1_txt.getText().toString().isEmpty() && !value2_txt.getText().toString().isEmpty()) {
                     value1 = Integer.parseInt(value1_txt.getText().toString());
                     value2 = Integer.parseInt(value2_txt.getText().toString());
                     try {
-                        result_txt.setText(String.valueOf(service.Add(value1, value2)));
+                        result_txt.setText(String.valueOf(+service.Add(value1, value2)));
                     } catch (RemoteException e) {
                         e.printStackTrace();
                     }
@@ -98,6 +101,7 @@ public class MainActivity extends AppCompatActivity implements ServiceConnection
 
 
     }
+
 
     @Override
     protected void onStart() {
