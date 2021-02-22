@@ -3,6 +3,7 @@ package com.hannah.mycalcapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
@@ -97,32 +98,12 @@ public class MainActivity extends AppCompatActivity implements ServiceConnection
 
 
     }
-//    CalcService calcService = new CalcService() {
-//        @Override
-//        public void Add() {
-//            result_txt.setText(String.valueOf(value1 + value2));
-//        }
-//
-//        @Override
-//        public void Divide() {
-//            result_txt.setText(String.valueOf(value1 / value2));
-//        }
-//
-//        @Override
-//        public void Subtract() {
-//            result_txt.setText(String.valueOf(value1 - value2));
-//        }
-//
-//        @Override
-//        public void Multiply() {
-//            result_txt.setText(String.valueOf(value1 * value2));
-//        }
-//    };
 
     @Override
     protected void onStart() {
         super.onStart();
-        bindService(new Intent("com.hannah.mycalcapp.network.SimpleService").setPackage("com.hannah.mycalcapp.network"), this, BIND_AUTO_CREATE);
+        bindService(new Intent("com.hannah.mycalcapp.SimpleService").setPackage("com.hannah.mycalcapp"), MainActivity.this,
+                BIND_AUTO_CREATE);
     }
 
     @Override

@@ -16,11 +16,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name=".network.SimpleService">
-            <intent-filter>
-                <action android:name="com.hannah.mycalcapp.network.SimpleService" />
-            </intent-filter>
-        </service>
+        <service android:name=".SimpleService" />
     </application>
 
 </manifest>
